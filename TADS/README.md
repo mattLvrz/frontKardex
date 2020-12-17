@@ -26,12 +26,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Resumen
 
 
-Resumen ....
 El sistema esta pensado como demo . 
 Se utilizan servicios y clases desde el lado del front con angular 11
 Solo  un router para mostrar su funcionamiento, en vez de utilizar multiples padres , hijos .
 Tampoco se utilizan componentes dinamicos ni validaciones ya que es de uso de pruebas entre comunicacion.
 Se utiliza su api rest en java
+
+
+En lo que es css, se intento hacerlo lo mas simple posible. 
 

@@ -1,4 +1,4 @@
-# PruebaDinamica
+# TADS The android's dungeon & baseball card shop (Demo)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
 

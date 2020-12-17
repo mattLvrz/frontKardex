@@ -1,0 +1,39 @@
+
+<div>
+   <span>   <button (click)='onClickRedirect("/home/addProduct",null)' class="btnNaranja">Agregar Producto</button></span>
+
+  
+</div>
+
+
+
+<div id="divtableProductos">
+   <table id="tableProductos" class="tableClass">
+     <tr>
+       <th>id</th>
+       <th>Producto</th>
+       <th>Descripcion</th>
+       <th>Stock Minimo</th>
+       <th>Stock Maximo</th>
+       <th>Stock Actual</th>
+       <th>Opciones</th>
+     </tr>
+     <tr *ngFor="let lsProducto of listProduct; let i = index">
+       <td>{{lsProducto.id}} </td>
+       <td>{{lsProducto.nombre}} </td>
+       <td>{{lsProducto.descripcion}} </td>
+       <td>{{lsProducto.stockMinimo}} </td>
+       <td>{{lsProducto.stockMaximo}} </td>
+       <td>{{lsProducto.stockActual}} </td>
+       <td>
+         <span>   <button (click)='onClickRedirect("/home/move",lsProducto)'class="btnNaranja">Nuevo Movimientos</button></span>
+         <span>   <button (click)='onClickRedirect("/home/kardex",lsProducto)' class="btnNaranja">Ver kardex</button></span>
+          <span>   <button (click)='onClickEditarProducto(lsProducto)' class="btnNaranja">Eliminar</button></span>
+       
+          
+       </td>
+     </tr>
+     
+   </table>
+ 
+ </div>

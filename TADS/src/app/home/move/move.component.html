@@ -1,0 +1,109 @@
+
+   
+  
+  <h2>Agregar movimineto.</h2>  
+  
+  <div class="container">
+    <form >
+    <div class="row">
+      <div class="col-25">
+        <label for="fname"> Nombre Producto</label>
+      </div>
+      <div class="col-75">
+        <label for="lname">{{producto.nombre}}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname"> Stock Actual</label>
+      </div>
+      <div class="col-75">
+        <label for="lname">{{producto.stockActual}}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Descripcion</label>
+      </div>
+      <div class="col-75">
+        <input  required [(ngModel)]="movimientoForm.descripcion" [ngModelOptions]="{standalone: true}" type="text" id="descripcion" name="lastname" placeholder="Escriba descipcion del movimiento..">
+     
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="tipo">Tipo Movimiento </label>
+      </div>
+      <div class="col-75">
+        <select   required [(ngModel)]="movimientoForm.tipo" [ngModelOptions]="{standalone: true}"  id="tipo" name="tipo">
+            <option value="S">Salida</option>
+            <option value="E">Entrada</option>           
+          </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Cantidad de unidades </label>
+      </div>
+      <div class="col-75">
+        <input   required [(ngModel)]="movimientoForm.cantidadUnidad" [ngModelOptions]="{standalone: true}"  type="number" id="maximo" name="lastname" placeholder="Cantidad de unidades a mover..">
+      </div>
+    </div> 
+    <div class="row" [ngClass]="{'noVisible': movimientoForm.tipo != 'E'}" >
+      <div class="col-25">
+        <label for="subject">Precio unitario </label>
+      </div>
+      <div class="col-75">
+        <input   required [(ngModel)]="movimientoForm.precioUnitario" [ngModelOptions]="{standalone: true}"  type="number" id="maximo" name="lastname" placeholder="Cantidad de unidades a mover..">
+      </div>
+    </div> 
+   
+    </form>
+  </div>
+  
+  
+  
+
+<span>   <button (click)='onClickGuardar()' class="btnNaranja">Guardar</button></span>
+
+
+<span>   <button [ngClass]="{'noVisible': selectedMovimiento != ''}"  (click)='onClickCancelar()' class="btnNaranja">Volver</button></span>
+<span>   <button  [ngClass]="{'noVisible': selectedMovimiento == ''}"(click)='onClickCancelarActualizar()' class="btnNaranja">Cancelar</button></span>
+
+
+
+ <div [ngClass]="{'noVisible': selectedMovimiento != ''}" >
+<h2>Ultimos movimientos.</h2>  
+<div id="divtableMovimiento">
+  <table id="tableMovimiento" class="tableClass">
+    <tr>
+      <th>Fecha</th>
+      <th>Producto</th>
+      <th>Descripcion</th>
+      <th>Movimiento</th>
+      <th>Cantidad</th>   
+      <th>Precio Unitario</th>     
+      <th>Opciones</th>
+    </tr>
+    <tr *ngFor="let lsMovimiento of listMovimientos; let i = index">      
+      <td>{{lsMovimiento.fechaCreacionString | date: 'shortDate'}} </td>  
+      <td>{{lsMovimiento.idProducto}} </td>
+      <td>{{lsMovimiento.descripcion}} </td>      
+      <td>
+        <p *ngIf="lsMovimiento.tipo=='S' " >Salidad</p>  
+        <p *ngIf="lsMovimiento.tipo=='E' ">Entrada</p>
+     </td>    
+      <td>{{lsMovimiento.cantidadUnidad}} </td> 
+      <td>{{lsMovimiento.precioUnitario}} </td>     
+      <td>
+         <span>   <button   (click)='onClickActualizar(lsMovimiento)'       class="btnNaranja">Editar</button></span>        
+         <span>   <button  (click)='onClickEliminar(lsMovimiento)'   class="btnNaranja">Eliminar</button></span>
+      
+         
+      </td>
+    </tr>
+    
+  </table>
+
+</div>
+</div> 

@@ -1,0 +1,58 @@
+
+   
+  
+  <h2>Agregar producto.</h2> 
+  <div class="container">
+    <form action="/action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname"> Nombre Producto</label>
+      </div>
+      <div class="col-75">
+        <input [(ngModel)] ="productoForm.nombre"  [ngModelOptions]="{standalone: true}"  type="text" id="producto" name="nombreproducto" placeholder="Escriba nombre del producto..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Descripcion</label>
+      </div>
+      <div class="col-75">
+        <input   [(ngModel)] ="productoForm.descripcion"  [ngModelOptions]="{standalone: true}"     
+          type="text" id="descripcion" name="lastname" placeholder="Escriba descripcion del producto..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Stock minimo</label>
+      </div>
+      <div class="col-75">
+        <input [(ngModel)] ="productoForm.stockMinimo"  [ngModelOptions]="{standalone: true}" 
+            type="number" id="minimo" name="lastname" placeholder="Escriba el stock minimo permitido..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Stock maximo</label>
+      </div>
+      <div class="col-75">
+        <input  [(ngModel)] ="productoForm.stockMaximo"  [ngModelOptions]="{standalone: true}"   
+          type="number" id="maximo" name="lastname" placeholder="Escriba el stock maximo permitido..">
+      </div>
+    </div>    
+    </form>
+  </div>
+  
+  
+<div class="divclassBtn">
+  <span>   <button (click)='onClickGuardar()' class="btnNaranja">Guardar</button></span>
+  <span>   <button (click)='onClickCancelar()' class="btnNaranja">Volver</button></span>
+</div>
+
+
+
+
+
+
+
+
+

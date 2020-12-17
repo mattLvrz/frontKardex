@@ -1,0 +1,66 @@
+
+<div>
+  <h2>Kardex (Metodo de valoracion : Promedio Ponderado)</h2>  
+
+  <div id="divtableMovimiento" style="margin: 10px;  text-align: -webkit-center;">
+    <table id="tableMovimiento" class="tableClass" style="width: 80%;">
+      <tr>        
+        <th>Producto:</th><td>{{producto.id}} </td>  
+        <th>Nombre :</th>  <td>{{producto.nombre}} </td>
+        <th>Stock:</th>  <td>{{producto.stockActual}} </td>           
+      </tr>     
+    </table>
+  
+  </div>
+
+
+  <div id="divtableKardex">
+    <table id="tableKardex" class="tableClass">
+      <tr>
+        <th colspan="2" style="text-align: center;"  >Detalle</th>
+        <th colspan="3"  style="text-align: center;"  >Entrada</th>
+        <th colspan="3"  style="text-align: center;"  >Salida</th>
+        <th colspan="3"  style="text-align: center;" >Actual</th>       
+      </tr>
+      <tr>
+        <td>Fecha</td>
+        <td>Detalle</td>
+
+        <td>Valor Unitario</td>        
+        <td>Cantidad</td>
+        <td>Valores</td> 
+
+        <td>Valor Unitario</td>        
+        <td>Cantidad</td>
+        <td>Valores</td> 
+
+        <td>Valor Unitario</td>        
+        <td>Cantidad</td>
+        <td>Valores</td> 
+  
+      </tr>
+      <tr  *ngFor="let lskardex of kardex; let i = index">      
+        <td>{{lskardex.fecha | date: 'shortDate'}}  </td>  
+        <td> {{lskardex.descripcion}} </td>
+
+        <td>{{lskardex.precioEntrada | number:'3.1-2'}}</td>
+        <td>{{lskardex.cantidadEntrada}}</td> 
+        <td>{{lskardex.cantidadEntrada * lskardex.precioEntrada | number:'3.1-2' }}</td>
+
+        <td>{{lskardex.precioSalidad | number:'3.1-2'}}</td>
+        <td>{{lskardex.cantidadSalidad}}</td> 
+        <td>{{lskardex.cantidadSalidad * lskardex.precioUnitario | number:'3.1-2' }}</td>         
+
+        <td>{{lskardex.precioUnitario | number:'3.1-2'}}</td>
+        <td>{{lskardex.cantidadStock}}</td> 
+        <td>{{lskardex.precioTotal | number:'3.1-2'}}</td> 
+      </tr>      
+    </table>
+  
+  </div>
+
+
+   <div class="btnsDiv" >
+    <span>   <button (click)='onClickCancelar()' class="btnNaranja">Volver</button></span>
+   </div>
+

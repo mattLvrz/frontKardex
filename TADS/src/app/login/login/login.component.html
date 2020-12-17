@@ -1,0 +1,17 @@
+<div class='bold-line'></div>
+<div class='container'>
+  <div class='window'>
+    <div class='overlay'></div>
+    <div class='content'>
+      <div class='welcome'>Log in</div>
+      <div class='subtitle'>Ingrese Username y  Password</div>
+      <div class='input-fields'>
+        <form >
+          <input [(ngModel)] ="login.nombreApodo"  [ngModelOptions]="{standalone: true}"   type='text' placeholder='Username' class='input-line full-width'> 
+          <input [(ngModel)] ="login.pass" [ngModelOptions]="{standalone: true}" type='password' placeholder='Password' class='input-line full-width'>
+        </form>   
+      </div>
+      <div><button  (click)='onClickIniciarLogin()' class='ghost-round full-width'>Login</button></div>
+    </div>
+  </div>
+</div>
